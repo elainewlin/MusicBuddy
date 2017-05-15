@@ -131,8 +131,7 @@ $(document).ready(function() {
 
     // Calibration video removal
     $('#calibrate').click(function() {
-      engine.removeVid();
-      $(this).remove();
+      $("canvas").toggle();
     });
 
     // listens for when the motion detection updates the line
