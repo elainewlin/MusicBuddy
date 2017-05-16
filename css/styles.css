@@ -20,15 +20,15 @@
     background-color: #C1F2F7;
 }
 
-/* motion detection debug */
-video, canvas {
+/* motion detection */
+#motionVideo, #motionCanvas {
     width: 480px;
     height: 360px;
     background-color: white;
     position: fixed;
     top: 200px;
     right: 0px;
-}
+ }
 
 #calibrate {
     position: fixed;
