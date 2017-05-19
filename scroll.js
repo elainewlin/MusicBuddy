@@ -24,7 +24,7 @@ var fusedScroll = function() {
   } else if (yInView < idealTop) {
     var slope = getSlope(0, MIN_SCROLL_DELTA, idealTop, IDEAL_SCROLL_DELTA);
     delta = solveForY(slope, idealTop, IDEAL_SCROLL_DELTA, yInView);    
-  } else {=
+  } else {
     delta = IDEAL_SCROLL_DELTA;
   }
   scroll(SCROLL_AMT_DEFAULT + delta);
