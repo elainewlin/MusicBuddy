@@ -1,12 +1,25 @@
 # MusicBuddy 
+A web app that detects user's gaze, motion, and speech to provide custom autoscrolling on ukulele tabs. Final term project for MIT class 6.835- Intelligent Multimodal User Interfaces.
 
-Start local server: 
-```python -m SimpleHTTPServer ```
+Full functionality tested on MacOS. Best performance under adequate light.
 
-Template documentation
-* Use Mustache for rendering HTML templates from JSON files
+#### How to Run: Two Options
+* Visit https://elainewlin.github.io/MusicBuddy/
+* Start local server ```python -m SimpleHTTPServer ``` and then visit http://localhost:8000/
 
-* Structure of JSON file
+#### System Requirements
+* Google Chrome (tested with version 57)
+* Webcam, microphone, and ukulele
+* Python 2.7 (for running locally)
+
+#### External Libraries Used
+* Gaze Detection: [WebGazer.js](https://webgazer.cs.brown.edu/) 
+* Speech Detection: [WebSpeech API](https://www.google.com/intl/en/chrome/demos/speech.html)
+* Motion Detection: Modified version of [diff-cam-engine](https://github.com/lonekorean/diff-cam-engine)
+* Song Loading + Templating: [Mustache](https://mustache.github.io/) 
+#### How to Load Different Songs From JSON
+Use Mustache for rendering HTML templates from JSON files
+* JSON File Structure
     - title: string with title of the song
     - artist: string with the artist of the song
     - allChords: array of strings of all chords in the song ex: ['Am', 'F', 'C', 'G']
@@ -15,8 +28,7 @@ Template documentation
         - chord: string with the chords + white spaces
         - lyrics: string with the lyrics
         - label: string with label of the section i.e. "Chorus", "Verse 1"
-
-* Python script parser.py makes it easy to generate the JSON files
+* JSON File Generator API (parser.py)
     - readURL(url): helper function to scrape HTML of a URL
     - toText(url): URL of a song --> text file of a song
     - allToText(): all songs URLs in urls.text --> all text files of songs
