@@ -49,13 +49,6 @@ var GazeTracker = function(args) {
 
     if (ready)
       updateGazeY(data.y, clock)
-    // TODO: remove the following once fusion is done:
-    // else {
-    //   if (data.y > WINDOW_HEIGHT * BOTTOM_REGION) {
-    //     $(that).triggerHandler("gazeUpdate", {gazeTest: 'hello'});
-    //     currentY = data.y;
-    //   }
-    // }
   };
 
   var smooth = function(arr) {
@@ -69,7 +62,6 @@ var GazeTracker = function(args) {
   var updateGazeY = function(y, clock) {
     var ms = clock/1000;
     if (ms % GAZE_INTERVAL < 0.02 && detectedYs.length > 0) {
-      console.log("3 seconds passed");
       currentY = smooth(detectedYs);
       $(that).triggerHandler("gazeUpdate");
       detectedYs = [];

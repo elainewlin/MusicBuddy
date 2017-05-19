@@ -100,7 +100,6 @@ var MotionDetect = function(args) {
         } else {
           nActualTransitions++;
         }
-        console.log("counted transitions: ", nActualTransitions, "currentLine: ", currentLine)
     }
   };
 };

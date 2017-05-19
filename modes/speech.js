@@ -139,7 +139,6 @@ var SpeechRec = function(args) {
       processed_line = true;
     }
 
-    //temporary check; TODO: determine when a line has been matched
     else if (interim_transcript.trim().split(' ').length === 5) {
       processed_line = true;
     }

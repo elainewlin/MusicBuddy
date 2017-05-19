@@ -8,7 +8,6 @@ var scroll = function(amt) {
 }
 
 // Scroll Fusion
-// TODO: refine this
 var fusedScroll = function() {
   var windowHeight = $(window).height();
   var docViewTop = $(window).scrollTop();
@@ -20,15 +19,12 @@ var fusedScroll = function() {
   var delta = 0;
 
   if (yInView > idealBottom) {
-    console.log("FASTER")
     var slope = getSlope(idealBottom, IDEAL_SCROLL_DELTA, windowHeight, MAX_SCROLL_DELTA)
     delta = solveForY(slope, windowHeight, MAX_SCROLL_DELTA, yInView);
   } else if (yInView < idealTop) {
-    console.log("SLOWER")
     var slope = getSlope(0, MIN_SCROLL_DELTA, idealTop, IDEAL_SCROLL_DELTA);
     delta = solveForY(slope, idealTop, IDEAL_SCROLL_DELTA, yInView);    
-  } else {
-    console.log("IDEAL");
+  } else {=
     delta = IDEAL_SCROLL_DELTA;
   }
   scroll(SCROLL_AMT_DEFAULT + delta);

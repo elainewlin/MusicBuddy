@@ -154,7 +154,7 @@ $(document).ready(function() {
       motion.setActualTransitions(0);
     });
   } else {
-    $('#calibrate').remove(); // TODO: create element in js instead of html
+    $('#calibrate').remove();
   }
   
   /*** Gaze Tracking Set-Up ***/
