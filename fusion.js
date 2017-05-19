@@ -36,5 +36,4 @@ var fuse = function() {
   	var result = (LINE_W*yLine + GAZE_W*yGaze);
   	finalY = result;
   }
-  console.log('yGaze: ', yGaze, 'yLine: ', yLine)
 }
